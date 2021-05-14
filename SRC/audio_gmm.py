@@ -58,6 +58,6 @@ if __name__ == "__main__":
                 log_lh.append(sum(logpdf_gmm(eval_data, Ws[ii], MUs[ii], COVs[ii])))
             winning_class_ind = np.argmax(log_lh)
 
-            logs_lh_string = ' '.join(["%.2f" % number for number in log_lh])
+            # logs_lh_string = ' '.join(["%.2f" % number for number in log_lh])
+            logs_lh_string = ["NaN" for x in range(NUM_CLASSES)]
             f.write("{} {} {}\n".format(eval_names[j], winning_class_ind + 1, logs_lh_string))
-    print("Evaluation completed, results are saved in ./GMM_audio_results")
